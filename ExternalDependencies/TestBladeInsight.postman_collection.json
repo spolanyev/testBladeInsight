@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "63278ffb-6d24-4eb4-a211-816d727505d5",
+		"name": "TestBladeInsight",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21490705"
+	},
+	"item": [
+		{
+			"name": "/ try and return 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/number try and return 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/number",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"number"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/1/value try and return 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/addresses/1/value",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses",
+						"1",
+						"value"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses list all return 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/1 list 1 return 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/addresses/1",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/address?id=1 OLD list 1 return 200",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/address?id=1",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"address"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses try and return 400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Something, Here, 1234567, -1234567, extraField"
+				},
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses add 1 return 201",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Something, Here, 1234567, -1234567"
+				},
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses add 4 return 201",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Bulk, One, 1234567, -1234567\r\nBulk, Two, 1234567, -1234567\r\n\r\nBulk, Three, 1234567, -1234567\r\nBulk, Four, 1234567, -1234567\r\n"
+				},
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/1 update 1 return 204 or 404",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Update, Something, 1234567, -1234567"
+				},
+				"url": {
+					"raw": "http://test.loc/addresses/1",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses update 4 return 204 or 400",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Updated Bulk, One, 1234567, -1234567\r\nUpdated Bulk, Two, 1234567, -1234567\r\n\r\nUpdated Bulk, Three, 1234567, -1234567\r\nUpdated Bulk, Four, 1234567, -1234567\r\n"
+				},
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses/1 delete 1 return 204",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/addresses/1",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/addresses delete all return 204",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://test.loc/addresses",
+					"protocol": "http",
+					"host": [
+						"test",
+						"loc"
+					],
+					"path": [
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -22,23 +22,23 @@ final class StorageAdapter implements ModelInterface
         $this->fullPathFile = $fullPathFile;
     }
 
-    public function create(string $parameters): int | false
+    public function create(string $parameters): int|false
     {
         $records = $this->parseInput($parameters);
         return file_put_contents($this->fullPathFile, implode(PHP_EOL, $records) . PHP_EOL, FILE_APPEND);
     }
 
-    public function read(int | null $id): array | null
+    public function read(int|null $id): array|null
     {
         $records = $this->getRecords($id);
         if (empty($records)) {
             return null;
         }
         //remove last field in record
-        return array_map(fn($array) => array_slice($array, 0, - 1), $records);
+        return array_map(fn($array) => array_slice($array, 0, -1), $records);
     }
 
-    public function update(int | null $id, string $parameters): int | false | null
+    public function update(int|null $id, string $parameters): int|false|null
     {
         $newRecords = $this->parseInput(string: $parameters, isPlain: true);
 
@@ -74,7 +74,7 @@ final class StorageAdapter implements ModelInterface
         return null;
     }
 
-    public function delete(int | null $id): int | false | null
+    public function delete(int|null $id): int|false|null
     {
         if (is_null($id)) {
             return file_put_contents($this->fullPathFile, '');
@@ -88,7 +88,7 @@ final class StorageAdapter implements ModelInterface
         return null;
     }
 
-    private function getRecords(int | null $id = null, bool $isPlain = false): array
+    private function getRecords(int|null $id = null, bool $isPlain = false): array
     {
         $result = [];
         $count = 0;

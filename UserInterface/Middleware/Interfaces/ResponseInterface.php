@@ -7,5 +7,5 @@ namespace TestBladeInsight;
 
 interface ResponseInterface
 {
-    public function respond(): string | int | float | bool | null | array | object;
+    public function respond(): string|int|float|bool|null|array|object;
 }

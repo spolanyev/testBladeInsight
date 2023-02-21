@@ -7,9 +7,10 @@ namespace TestBladeInsight;
 
 final class Dispatcher implements DispatcherInterface
 {
-    public function __construct(private readonly RouterInterface $router, private readonly ControllerInterface $controller)
-    {
-
+    public function __construct(
+        private readonly RouterInterface $router,
+        private readonly ControllerInterface $controller
+    ) {
     }
 
     public function dispatch(ServerRequestInterface $request): ServerResponseInterface

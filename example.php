@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TestBladeInsight;
 
 ini_set('display_errors', '1');
-ini_set('error_reporting', (string) E_ALL);
+ini_set('error_reporting', (string)E_ALL);
 date_default_timezone_set('Europe/Lisbon');
 
 $fullPathFileLog = __DIR__ . DIRECTORY_SEPARATOR . 'Logs' . DIRECTORY_SEPARATOR . 'log.txt';

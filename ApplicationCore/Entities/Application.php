@@ -9,13 +9,11 @@ final class Application implements ApplicationInterface
 {
     public function __construct(private readonly string $fullPathFileLog)
     {
-
     }
 
     public function run(): void
     {
         try {
-
             $request = new Request();
             $request->normalize();
 
@@ -33,7 +31,6 @@ final class Application implements ApplicationInterface
 
             $response = $dispatcher->dispatch($request);
             $response->respond();
-
         } catch (HttpException $exception) {
             (new HttpExceptionHandler($exception->getHttpStatus()))->respond();
         } catch (\Throwable $exception) {

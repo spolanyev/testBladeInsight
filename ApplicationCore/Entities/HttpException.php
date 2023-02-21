@@ -9,7 +9,7 @@ final class HttpException extends \RuntimeException implements HttpExceptionInte
 {
     private readonly HttpStatus $httpStatus;
 
-    public function __construct(string $message = "", int $code = 0, \Throwable | null $previous = null)
+    public function __construct(string $message = "", int $code = 0, \Throwable|null $previous = null)
     {
         $this->httpStatus = HttpStatus::from($code);
         parent::__construct($message, $code, $previous);

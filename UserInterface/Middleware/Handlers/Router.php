@@ -14,7 +14,7 @@ final class Router implements RouterInterface
         $this->handler[$method->value][$path] = $handler;
     }
 
-    public function getHandler(ServerRequestInterface $request): array | false
+    public function getHandler(ServerRequestInterface $request): array|false
     {
         $method = $request->getHttpMethod()->value;
         $path = $request->getPath();

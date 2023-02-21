@@ -5,6 +5,7 @@
 
 namespace TestBladeInsight;
 
-interface RequestInterface {
+interface RequestInterface
+{
     public function request(array $request): void;
 }

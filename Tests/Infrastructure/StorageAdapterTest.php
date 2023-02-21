@@ -81,8 +81,9 @@ class StorageAdapterTest extends TestCase
     private function getExpected(string $string): array
     {
         return array_map(
-            fn($line) => array_slice(array_filter(str_getcsv(trim($line))), 0, - 1),
-            explode("\n", $string));
+            fn($line) => array_slice(array_filter(str_getcsv(trim($line))), 0, -1),
+            explode("\n", $string)
+        );
     }
 
     public function testExceptionOne()

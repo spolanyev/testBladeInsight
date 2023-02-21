@@ -7,8 +7,8 @@ namespace TestBladeInsight;
 
 final class Controller implements ControllerInterface
 {
-    public function __construct(private readonly Factory $factory = new Factory()) {
-
+    public function __construct(private readonly Factory $factory = new Factory())
+    {
     }
 
     public function getResponse(ServerRequestInterface $request, array $handler): ServerResponseInterface
@@ -22,7 +22,7 @@ final class Controller implements ControllerInterface
 
     private function view(ServerRequestInterface $request): ServerResponseInterface
     {
-        [ , , $model] = $this->setUp($request);
+        [, , $model] = $this->setUp($request);
         $result = $model->read($request->getId());
         $response = $this->factory->getResponse();
         $response->setContent($result);
@@ -31,21 +31,21 @@ final class Controller implements ControllerInterface
 
     private function create(ServerRequestInterface $request): ServerResponseInterface
     {
-        [ , , $model] = $this->setUp($request);
+        [, , $model] = $this->setUp($request);
         $result = $model->create($request->getParsedBody());
         return $this->setDown($result, HttpStatus::Created);
     }
 
     private function update(ServerRequestInterface $request): ServerResponseInterface
     {
-        [ , , $model] = $this->setUp($request);
+        [, , $model] = $this->setUp($request);
         $result = $model->update($request->getId(), $request->getParsedBody());
         return $this->setDown($result, HttpStatus::NoContent);
     }
 
     private function delete(ServerRequestInterface $request): ServerResponseInterface
     {
-        [ , , $model] = $this->setUp($request);
+        [, , $model] = $this->setUp($request);
         $result = $model->delete($request->getId());
         return $this->setDown($result, HttpStatus::NoContent);
     }

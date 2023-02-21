@@ -57,7 +57,7 @@ final class Request implements ServerRequestInterface
         return $this->parameters;
     }
 
-    public function getId(): int | null
+    public function getId(): int|null
     {
         return $this->parameters['id'] ?? null;
     }

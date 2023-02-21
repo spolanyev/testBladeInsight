@@ -9,7 +9,6 @@ final class HttpExceptionHandler implements ResponseInterface
 {
     public function __construct(private readonly HttpStatus $httpStatus)
     {
-
     }
 
     public function respond(): never

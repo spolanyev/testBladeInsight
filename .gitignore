@@ -1,3 +1,5 @@
 .idea/*
 .phpunit.result.cache
-
+/vendor
+composer.json
+composer.lock

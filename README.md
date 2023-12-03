@@ -1,18 +1,20 @@
 # About
 
-This project is done with TDD accordingly to the task description located in [ExternalDependencies/TestTaskDescription](ExternalDependencies/TestTaskDescription).
+This project is done with TDD according to the task description located in [ExternalDependencies/TestTaskDescription](ExternalDependencies/TestTaskDescription).
 
-Clean Architecture structure is taken from https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures article.
+The Clean Architecture structure is taken from https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures.
 
-API rules are taken from https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design article. By the way, I didn't change the output of API to follow the rule from the task description.
+The API rules are from https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design. By the way, I didn't change the output of the API to follow the rule from the task description.
 
 # Installation
 
-Place the files on __PHP 8.1__ web server.
+Place the files on a PHP `8.1` web server.
 
-File [__example.php__](example.php) is an entry point. I think you know how to make it to handle web root requests like __/address__.
+The `example.php` file is your starting point. I think you know how to get it to handle web root requests like `/address`.
 
-A database is set in [UserInterface/Startup/__.env__](UserInterface/Startup/.env) file. It accepts files existing in [ExternalDependencies/Database](ExternalDependencies/Database).
+The [UserInterface/Startup/__.env__](UserInterface/Startup/.env) file sets up a database. It accepts files that exist in [ExternalDependencies/Database](ExternalDependencies/Database).
+
+You can run tests if you have PHPUnit installed with the command `phpunit --bootstrap Tests/bootstrap.php Tests/`.
 
 # Usage
 
@@ -27,10 +29,10 @@ A database is set in [UserInterface/Startup/__.env__](UserInterface/Startup/.env
 | DELETE   | /addresses   | Delete records | -                                    |      204      |
 | DELETE   | /addresses/1 | Delete record  | -                                    |      204      |
 
-Old __GET /address?id=1__ is preserved.
+Old `/address?id=1` is preserved.
 
-There is my Postman collection for API testing in [ExternalDependencies/TestBladeInsight.postman_collection.json](ExternalDependencies/TestBladeInsight.postman_collection.json) file.
+There is my Postman collection for API testing in [ExternalDependencies/TestBladeInsight.postman_collection.json](ExternalDependencies/TestBladeInsight.postman_collection.json).
 
 # Contacts
 
-Feel free to contact me at [spolanyev@gmail.com](mailto:spolanyev@gmail.com?subject=PHP%3A%20BladeInsight%20project)
+If you are hiring, feel free to contact me at [spolanyev@gmail.com](mailto:spolanyev@gmail.com?subject=PHP)
